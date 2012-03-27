@@ -5,7 +5,7 @@ class Object
     inspected = inspect
 
     @hiwai_matches = Hiwai.censorable_words.select {|word|
-      inspected.match Regexp.new(word)
+      inspected.match Hiwai::MaskedRegexp.new(word)
     }
 
     @hiwai_matches.any?
