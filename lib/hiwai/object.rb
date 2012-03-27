@@ -2,10 +2,10 @@
 
 class Object
   def hiwai?
-    inspected = inspect
+    string = to_s
 
     @hiwai_matches = Hiwai.censorable_words.select {|word|
-      inspected.match Hiwai::MaskedRegexp.new(word)
+      string.match Hiwai::MaskedRegexp.new(word)
     }
 
     @hiwai_matches.any?
