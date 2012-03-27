@@ -7,7 +7,7 @@
 
 ## Installation
 
-** under construction **
+**under construction**
 
 Add this line to your application's Gemfile:
 
@@ -34,7 +34,7 @@ Hiwai.dictionary = 'path/to/dictionary'
 ['とっても<<よくない文字列>>です'].hiwai? # => true
 ```
 
-今は単純にString#matchでマッチさせています（もっと精度の高い方法にしたい）。
+今は単純にレシーバをto_sした結果をString#matchでマッチさせています（もっと精度の高い方法にしたい）。
 ワードの一覧はvendor/hiwai.txtの下に改行区切で置いています（まだ何もない）。
 管理するときになるべく見ないためにBase64エンコーディングしています。
 
