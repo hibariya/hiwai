@@ -1,7 +1,7 @@
 module Hiwai
   module Masked
     def masked_string
-      '<censored>'
+      '<masked>'
     end
 
     alias_method :to_s, :masked_string
