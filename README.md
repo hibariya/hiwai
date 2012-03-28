@@ -40,6 +40,38 @@ Hiwai.dictionary = 'path/to/dictionary'
 
 マッチ候補の文字列はHiwaiモジュールが持っていますが、inspectしたときにうっかり表示されないように拡張しています。
 
+## 単語リストの管理
+
+### 対話モードで単語を追加
+
+デフォルトの単語リスト`vendor/hiwai.txt`に単語を追加できます。
+
+```
+rake dic:interactive
+```
+
+できることは追加だけです。`crtl+d`で追加した単語が保存されます。それまでの入力を破棄するには`ctrl+c`します。
+
+入力した文字は普通にエコーバックされます。
+
+### 素のままで編集する
+
+**リダイレクトしなければあられもない文字列たちが標準出力に出力されます。**
+
+1. 単語リストをプレーンなテキストに展開します
+
+```
+cat path/to/dictionary | rake dic:expand > temporary
+```
+
+2. がんばって編集したのち保存します
+
+3. 変換して上書きします
+
+```
+cat temporary | rake dic:serialize > path/to/dictionary
+```
+
 ## Contributing
 
 1. Fork it
@@ -47,3 +79,4 @@ Hiwai.dictionary = 'path/to/dictionary'
 3. Commit your changes (`git commit -am 'Added some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
