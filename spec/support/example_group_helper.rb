@@ -2,6 +2,6 @@
 
 module ExampleGroupHelper
   def censored
-    Base64.decode64('PDzjgajjgabjgoLljZHnjKXjgarmloflrZfliJc+Pg==').force_encoding('utf-8')
+    Hiwai.decode_censorable('PDzjgajjgabjgoLljZHnjKXjgarmloflrZfliJc+Pg==')
   end
 end
