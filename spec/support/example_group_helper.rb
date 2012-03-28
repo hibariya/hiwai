@@ -2,6 +2,6 @@
 
 module ExampleGroupHelper
   def censored
-    Hiwai.decode_censorable('PDzjgajjgabjgoLljZHnjKXjgarmloflrZfliJc+Pg==')
+    Hiwai::CensorableWords.decode('PDzjgajjgabjgoLljZHnjKXjgarmloflrZfliJc+Pg==')
   end
 end
